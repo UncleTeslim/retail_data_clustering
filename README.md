@@ -31,7 +31,7 @@ After feature engineering, he dataset contains customer transaction details with
 - **Recency**: Days since the last purchase.
 - **Average Order Value**: Spending per order.
 - **Average Items Per Order**: Items per transaction.
-- **Country**: Items per transaction.
+- **Country**: Country where customer has come from
 
 ## 🚀 Installation & Usage
 ### 1️⃣ Clone Repository
