@@ -1,68 +1,89 @@
-# Customer Segmentation using K-Means Clustering
+# Customer Segmentation Using K-Means Clustering
 
-## 📌 Project Overview
-This project applies **K-Means clustering** to segment customers based on their purchasing behavior. Using **Principal Component Analysis (PCA)** for dimensionality reduction and data preprocessing techniques, I derived meaningful customer insights to aid business decision-making.
+## Overview
+This project focuses on **customer segmentation** using **K-Means clustering**. The goal is to group customers based on their purchasing behavior and provide insights for business strategies such as targeted marketing and customer retention.
 
-## 📊 Key Features
-- **Data Preprocessing**: Handling missing values, feature engineering, and normalization.
-- **PCA for Dimensionality Reduction**: Reducing complexity while preserving variance.
-- **Optimal K Selection**: Using the **Elbow Method** and **Silhouette Score**.
-- **K-Means Clustering**: Grouping customers based on key purchasing behaviors.
-- **Visualizations**: PCA plots, cluster characteristics, and metric comparisons.
-- **Business Insights**: Recommendations for targeted marketing strategies.
-
-## 📂 Dataset
-
-
-The dataset initially contained customer transaction details with the following features:
-- **Invoice**: Sum of all purchases per customer.
-- **StockCode**: Number of unique invoices per customer.
-- **Description**: Sum of all items purchased.
-- **Quantity**: Number of unique products bought.
-- **InvoiceDate**: Days since the last purchase.
-- **CustomerID**: Spending per order.
-- **Country**: Items per transaction.
-- 
-After feature engineering, he dataset contains customer transaction details with the following key features:
-- **Total Spending**: Sum of all purchases per customer.
-- **Total Orders**: Number of unique invoices per customer.
-- **Total Quantity**: Sum of all items purchased.
-- **Distinct Items**: Number of unique products bought.
-- **Recency**: Days since the last purchase.
+## Dataset
+The dataset consists of transaction data with key attributes such as:
+- **Total Spending**: Total amount spent by each customer.
+- **Total Orders**: Number of transactions per customer.
+- **Total Quantity**: Total items purchased.
 - **Average Order Value**: Spending per order.
-- **Average Items Per Order**: Items per transaction.
-- **Country**: Country where customer has come from
+- **Average Items Per Order**: Items purchased per transaction.
+- **Distinct Items**: Unique products purchased.
+- **Recency**: How recently a customer made a purchase.
 
-## 🚀 Installation & Usage
-### 1️⃣ Clone Repository
-```sh
- git clone[[https://github.com/UncleTeslim/retail_data_clustering]]
- cd retail_data_clustering
-```
+## Clustering Approach
+- **Principal Component Analysis (PCA)** was applied to reduce dimensionality and visualize the clusters.
+- **K-Means clustering** was used to group customers into **six distinct segments** based on their purchasing behavior.
 
-### 2️⃣ Install Dependencies
-```sh
-pip install -r requirements.txt
-```
+## Key Findings
+1. **Cluster 0 (High-Value Frequent Buyers)**
+   - High total spending and frequent orders.
+   - Large variety of items purchased.
+   - Recent purchases indicate engagement.
+   
+2. **Cluster 1 (Low-Value Infrequent Buyers)**
+   - Lowest spending and order count.
+   - Fewer distinct items purchased.
+   - Longer recency suggests inactivity.
 
-### 3️⃣ Run Clustering Analysis
-```sh
-python clustering.py
-```
+3. **Cluster 2 (Moderate Spenders with Mid-Level Frequency)**
+   - Mid-range spending and orders.
+   - Decent variety in purchases.
+   - Moderate recency.
 
-## 📈 Visualizations
-- **PCA Scatter Plot**: Displays customer clusters.
-- **Elbow Method**: Determines the optimal number of clusters.
-- **Cluster Comparison**: Shows differences in key metrics.
+4. **Cluster 3 (Frequent Shoppers with Moderate Spending)**
+   - High purchase frequency but moderate spending per order.
+   - Good variety in purchases.
+   - Engagement is relatively high.
 
-## 📢 Business Insights
-- **Cluster 1 (High-Value Customers)**: Frequent shoppers with higher spending. Target them with personalized offers and loyalty programs.
-- **Cluster 0 (Low-Engagement Customers)**: Less frequent purchases. Use email marketing and incentives to re-engage them.
+5. **Cluster 4 (Low-Engagement Customers)**
+   - Lowest spending and unique items purchased.
+   - Few transactions and long recency.
 
-## 📜 License
-This project is licensed under the **MIT License**.
+6. **Cluster 5 (High-Spending Engaged Customers)**
+   - High spending and large order volumes.
+   - High recency, showing active engagement.
 
-## 🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first.
+## Visualizations
+- **PCA-based Cluster Visualization:** Displays customer segmentation in reduced dimensions.
+- **Customer Distribution by Country:** Shows that most customers belong to the UK, with smaller segments in other countries.
 
+## Repository Structure
+- `retail_data.ipynb` - Jupyter Notebook containing data preprocessing, clustering, and analysis.
+
+## Requirements
+To run this project, you need:
+- **Jupyter Notebook (or JupyterLab)**
+- **Anaconda (Recommended)** or a Python environment with the required libraries.
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/UncleTeslim/retail_data_clustering]
+   cd retail_data_clustering
+   ```
+2. Install dependencies:
+   ```bash
+   conda create --name retail_data_clustering python=3.8
+   conda activate retail_data_clustering
+   pip install -r requirements.txt
+   ```
+3. Open Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+4. Run `retail_data_clustering.ipynb` to see the results.
+
+## Future Work
+- Experiment with **alternative clustering methods** (e.g., DBSCAN, Hierarchical Clustering).
+- Improve **feature engineering** to enhance clustering quality.
+- Deploy as a dashboard for **interactive customer segmentation insights**.
+
+## Contributors
+- **Teslim Kazeem** - Data Scientist
+
+## License
+This project is licensed under the MIT License.
 
